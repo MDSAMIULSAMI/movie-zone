@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/navbar';
+import MovieCard from './components/moviecard';
+import FullMovieStream from './components/fullmoviestream';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Fragment>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<MovieCard />} />
+          <Route path="/fullmoviestream/:id" element={<FullMovieStream />} />
+        </Routes>
+      </React.Fragment>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
