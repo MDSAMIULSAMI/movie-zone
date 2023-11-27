@@ -7,9 +7,20 @@ const FullMovieStream = () => {
   const { id } = useParams();
   const selectedMovie = movieData.find(movie => movie.id === parseInt(id, 10));
   const [selectedEpisode, setSelectedEpisode] = useState(selectedMovie.episodes[0]);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+
   const handleEpisodeClick = (episode) => {
     setSelectedEpisode(episode);
   };
+
+  const handleCommentSubmit = () => {
+    if (newComment.trim() !== '') {
+      setComments(prevComments => [...prevComments, { user: 'ABCD', comment: newComment }]);
+      setNewComment('');
+    }
+  };
+
   return (
     <React.Fragment>
       <div>
@@ -71,11 +82,29 @@ const FullMovieStream = () => {
               <h2>Comments</h2>
               <div className='card m-4'>
                 <div className="form-floating d-flex m-2" data-bs-theme="dark">
-                  <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
-                  <label className='text-white' for="floatingTextarea2">Enter Comment</label>
-                  <button type="button" className="btn btn-info m-2">Submit</button>
+                  <textarea
+                    className="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea2"
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                  ></textarea>
+                  <label className='text-white' htmlFor="floatingTextarea2">Enter Comment</label>
+                  <button type="button" className="btn btn-info m-2" onClick={handleCommentSubmit}>
+                    Submit
+                  </button>
                 </div>
+              </div>
 
+              <div>
+                {comments.map((comment, index) => (
+                  <div key={index} className='card m-2'>
+                    <div className='card-body'>
+                      <h6 className='card-title'>{comment.user}</h6>
+                      <p className='card-text'>{comment.comment}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -88,4 +117,5 @@ const FullMovieStream = () => {
     </React.Fragment>
   );
 };
+
 export default FullMovieStream;
