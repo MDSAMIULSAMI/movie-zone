@@ -22,8 +22,8 @@ const FullMovieStream = () => {
               <div className='row'>
                 <div className='col'>
                   <div className='d-flex'>
-                  <h1 className='text-white'>{selectedMovie.name}</h1>
-                  <button type="button" className="btn btn-outline-warning m-2" disabled>1000 Views </button>
+                    <h1 className='text-white'>{selectedMovie.name}</h1>
+                    <button type="button" className="btn btn-outline-warning m-2" disabled>1000 Views </button>
                   </div>
                   <div className='d-flex'>
                     <img className='thumbnail' src={selectedMovie.imageUrl} alt={selectedMovie.name} />
@@ -34,29 +34,27 @@ const FullMovieStream = () => {
                       </div>
                     </div>
                     <div className="col card card-4 mx-2">
-                  <div className="card-body">
-                    <div className='icons'>
+                      <div className="card-body">
+                        <div className='icons'>
                           <img className='m-2' width="25" height="25" src={selectedMovie.quality} alt="r--v1" />
                           <img className='m-2' width="25" height="25" src={selectedMovie.contentType} alt="r--v1" />
                         </div>
                         <div className='card card-5'>
                           <div className='card-body card-body-5'>
-                              <p>Type: {selectedMovie.type}</p>
-                              <p>Country: {selectedMovie.country}</p>
-                              <p>Genres: {selectedMovie.genres}</p>
-                              <p>Actor: {selectedMovie.actor}</p>
-                              <p>Rating: {selectedMovie.rating}</p>
-                              <p>Aired Date: {selectedMovie.dateAired}</p>
-                              <p>Episodes: {selectedMovie.episode}</p>
+                            <p>Type: {selectedMovie.type}</p>
+                            <p>Country: {selectedMovie.country}</p>
+                            <p>Genres: {selectedMovie.genres}</p>
+                            <p>Actor: {selectedMovie.actor}</p>
+                            <p>Rating: {selectedMovie.rating}</p>
+                            <p>Aired Date: {selectedMovie.dateAired}</p>
+                            <p>Episodes: {selectedMovie.episode}</p>
                           </div>
                         </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                  </div>
-
                 </div>
               </div>
-
             </div>
             <div className="card card-2 col list-group my-4 p-2">
               {selectedMovie.episodes.map(episode => (
@@ -69,7 +67,17 @@ const FullMovieStream = () => {
                 </button>
               ))}
             </div>
-            <div className=''>dgdfhd</div>
+            <div className='text-white'>
+              <h2>Comments</h2>
+              <div className='card m-4'>
+                <div className="form-floating d-flex m-2" data-bs-theme="dark">
+                  <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+                  <label className='text-white' for="floatingTextarea2">Enter Comment</label>
+                  <button type="button" className="btn btn-info m-2">Submit</button>
+                </div>
+
+              </div>
+            </div>
           </div>
         ) : (
           <div>
