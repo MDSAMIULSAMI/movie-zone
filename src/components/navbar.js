@@ -1,5 +1,6 @@
 import React from 'react';
 import navBar from "./JSON/navbarJSON.json";
+import { Link } from 'react-router-dom';
 // import logo from "./Images/Logo-MoiveZone.png"
 export default function Navbar() {
   const { brand, links, searchPlaceholder, offcanvasTitle } = navBar;
@@ -64,7 +65,10 @@ export default function Navbar() {
             </h5>
             <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div className="offcanvas-body">Profile</div>
+          <div className="offcanvas-body">
+            <p>Profile</p>
+            <a href='http://192.168.68.109:3000/login'>Log Out</a>
+          </div>
         </div>
       </div>
     </React.Fragment>
