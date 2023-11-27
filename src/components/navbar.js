@@ -1,7 +1,5 @@
 import React from 'react';
 import navBar from "./JSON/navbarJSON.json";
-import { Link } from 'react-router-dom';
-// import logo from "./Images/Logo-MoiveZone.png"
 export default function Navbar() {
   const { brand, links, searchPlaceholder, offcanvasTitle } = navBar;
 
@@ -10,7 +8,6 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="http://192.168.68.109:3000/">
-          {/* <img src={logo} height="45" width="100"/> */}
           {brand}
           </a>
           <button
@@ -45,7 +42,7 @@ export default function Navbar() {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
+                  href="/"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasRight"
                   aria-controls="offcanvasRight"
