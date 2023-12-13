@@ -7,7 +7,7 @@ export default function Navbar() {
     <React.Fragment>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="http://192.168.68.109:3000/">
+          <a className="navbar-brand" href="http://localhost:3000">
           {brand}
           </a>
           <button
@@ -64,7 +64,7 @@ export default function Navbar() {
           </div>
           <div className="offcanvas-body">
             <p>Profile</p>
-            <a href='http://192.168.68.109:3000/login'>Log Out</a>
+            <a href='http://localhost:3000/login'>Log Out</a>
           </div>
         </div>
       </div>
